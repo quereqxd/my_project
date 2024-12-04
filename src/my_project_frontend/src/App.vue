@@ -7,12 +7,15 @@ async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
   const newMsg = target.querySelector('#newMsg').value;
-  await my_project_backend.greet(newMsg);
+  await my_project_backend.set_msg(newMsg);
+  await getMsg()
 }
 
-async function getMSG() {
-  msg.value =   await my_project_backend.get_msg()
+async function getMsg() {
+  msg.value = await my_project_backend.get_msg()
 }
+
+getMsg()
 </script>
 
 <template>
